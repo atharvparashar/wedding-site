@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #0b0b0c; color: #f7f3eb; font-family: var(--font-manrope), sans-serif; overflow-x: hidden; }
+::selection { background: #d6b36a; color: #0b0b0c; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0b0b0c; }
+::-webkit-scrollbar-thumb { background: #574827; border-radius: 9px; }
+.noise { position: relative; }
+.noise::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .035; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E"); z-index: 1; }
+.eyebrow { display: flex; align-items: center; gap: .75rem; color: #d6b36a; font-size: .65rem; font-weight: 700; letter-spacing: .27em; text-transform: uppercase; }
+.eyebrow::before { content: ""; width: 1.75rem; height: 1px; background: currentColor; }
+.gold-line { height: 1px; background: linear-gradient(90deg, transparent, rgba(214,179,106,.75), transparent); }
+.glass { border: 1px solid rgba(255,255,255,.12); background: linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,.025)); backdrop-filter: blur(16px); }
+.image-shine { position: relative; overflow: hidden; }
+.image-shine::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.16) 49%, transparent 60%); transform: translateX(-120%); transition: transform .8s ease; }
+.image-shine:hover::after { transform: translateX(120%); }
+.booking-label { display: block; color: rgba(247,243,235,.54); font-size: .625rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.booking-input { display: block; width: 100%; margin-top: .5rem; border: 0; border-bottom: 1px solid rgba(247,243,235,.2); border-radius: 0; background: transparent; padding: .75rem 0; color: #f7f3eb; font: inherit; font-size: .875rem; outline: none; transition: border-color .2s ease; }
+.booking-input:focus { border-color: #d6b36a; }
+.booking-input::placeholder { color: rgba(247,243,235,.25); }
+.booking-input option { background: #1a1a1b; color: #f7f3eb; }
